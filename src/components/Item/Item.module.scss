@@ -1,0 +1,125 @@
+@import '../../scss/variables';
+
+.container{
+
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    width: 65vw;
+    height: 1.2em;
+    border-bottom: 1.6px solid $purple;
+    font-size: 4.5vw;
+    transition: box-shadow 0.2s linear;
+    // border-radius: $border-radius;
+
+    &.dark{
+        background-color: $dark-glass;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); 
+    }
+
+    &.light{
+        background-color: $light-glass;
+    }
+        
+    &.dark:hover{
+    
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.1); 
+    } 
+
+    &.light:hover{
+
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); 
+    } 
+
+    .item{
+
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: flex-start;
+        // align-content: center;
+        // border-bottom: 1.6px solid $purple;
+        // // min-height: fit-content;
+        // // min-width: fit-content;
+        // // width: 10vw;
+        // // height: 10vw;
+        // width: 90%;
+        // height: 90%;
+        // padding: 2vw;
+        // transition: all 0.2s linear;
+        display: flex;
+        width: 90%;
+        justify-self: flex-start;
+        flex-direction: row;
+        justify-items: flex-start;
+        align-items: center;
+        color: $purple;
+        font-size: 1.5vw;
+        cursor: pointer;
+
+        @media screen and (max-width: $phone) {
+            
+            // width: 40vw;
+            // height: 40vw;
+            padding: 0;
+        }
+    
+        img{
+    
+            width: 1.5em;
+            padding: 0 1.5em 0 0;
+
+            // @media screen and (max-width: $phone) {
+            
+            //     width: 12vw;
+            // }
+        }
+    
+        h3{
+            text-align: center;
+            color: $purple;
+            font-weight: $text-weight;
+            @media screen and (max-width: $phone) {
+            
+                font-size: 4.5vw;
+            }
+        }
+    }
+
+    button{
+        
+        width: 30px;
+        height: 30px;
+        border: none;
+        color: $purple;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        visibility: hidden;
+        // transition: visibility 0.5s linear;
+        z-index: 10;
+
+        &.dark{
+            background-color: $dark-glass;
+        }
+        &.light{
+            background-color: $light-glass;
+        }
+    }
+
+    &:hover button{
+        visibility: visible;
+    }
+    
+    .link{
+    
+        text-decoration: none;
+        display: flex;
+        width: 90%;
+        flex-direction: row;
+        justify-items: flex-start;
+        align-items: center;
+        color: $purple;
+        font-size: 1.5vw;
+    }
+}

@@ -1,0 +1,120 @@
+@import '../../scss/variables';
+
+.header{
+
+    width: 100vw;
+    height: 90vh;
+    max-height: 90vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    // background-image: linear-gradient(35deg, $pink, $light-blue); 
+    background-image: linear-gradient(35deg, $pink, $light-blue); 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
+    background-size: cover;
+    background-position-y: top;
+
+    .image_and_title{
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding-top: 10vh;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+
+        .title_container{
+
+            align-self: center;
+            width: 40%;
+
+            @media screen and (max-width: 600px){
+
+                width: 100%;
+            }
+            
+            h1{
+                text-align: center;
+                font-family: $heading-font;
+                font-weight: $heading-weight;
+                font-size: 5.5vw;
+                color: #fff;
+
+                @media screen and (max-width: 600px){
+
+                    font-size: 10vw;
+                }
+            }
+
+            button{
+
+                width: 35%;
+                background-color: $light-blue;
+                color: #fff;
+                font-size: 1.5vw;
+                height: 6vh;
+                border-radius: 10px;
+                border: none;
+                transition: all 0.2s linear;
+
+                &:hover{
+
+                    transform: scale(1.05);
+                    background-color: $light-blue-hover;
+                }
+            }
+        }
+
+        .image_container{
+
+            display: flex;
+            justify-items: center;
+            align-items: center;
+
+            img{
+                height: 70vh;
+                max-height: 55vh;
+
+                @media screen and (max-width: 950px){
+
+                    width: 45vw;
+                    height: auto;
+                }
+
+                @media screen and (max-width: 600px){
+
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .wave{
+
+        position: relative;
+        bottom: 0;
+        width: 100vw;
+
+        & path{
+
+            transition: fill 0.5s linear;
+            fill: $dark-background;
+        }
+
+        &.light path{
+
+            fill: $light-background;
+        }
+        
+        @media screen and (max-width: $phone) {
+
+           bottom: -2.3vh;
+        }
+    }
+}

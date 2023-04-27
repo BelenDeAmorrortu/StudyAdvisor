@@ -1,0 +1,23 @@
+@import '../../scss/variables';
+
+.features{
+
+    display: flex;
+    position: relative;
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vw;
+
+    @media screen and (max-width: 600px){
+
+        flex-direction: column; 
+    }
+
+    @media screen and (max-width: $phone){
+
+        top: -15vh;   
+    }
+}

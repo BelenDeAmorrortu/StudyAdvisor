@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+
+.cardFolders_container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+
+    .cardGroups_display{
+
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100%;
+        padding: 5vh 0;
+
+        div:last-child{
+            border-radius: $border-radius $border-radius 0 0;
+        }
+
+        div:first-child{
+            border-radius: 0 0 $border-radius $border-radius;
+            border: none;
+        }
+
+        div:only-child{
+            border-radius: $border-radius;
+        }
+
+        .message{
+            
+            font-size: 1.5vw;
+            opacity: 0.8;
+            margin: 2vw;
+        }
+    }
+}

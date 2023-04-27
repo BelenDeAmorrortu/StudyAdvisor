@@ -1,0 +1,65 @@
+@import '../../scss/variables';
+
+.feature_container{
+
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    height: 15vw;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    border: 3px solid;
+    border-image: $dark-gradient 1;
+    margin: 3vw;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    transition: transform 0.3s linear;
+
+    &.dark{
+        background-color: $dark-glass;
+    }
+
+    &.light{
+        background-color: $light-glass;
+    }
+
+    @media screen and (max-width: $mid-screen){
+
+        width: 30vw;
+        height: 40vw;
+        min-height: fit-content; 
+    }
+
+    @media screen and (max-width: $phone){
+
+        width: 55vw;
+        height: 35vh;
+        min-height: fit-content;
+        margin: 4vh;
+    }
+
+    h4{
+
+        background-image: $dark-gradient;
+        background-clip: text;
+        font-size: 2vw ;
+        color: transparent;
+        text-align: center;
+        margin-bottom: 0;
+ 
+        @media screen and (max-width: $mid-screen){
+
+            font-size: 4vw;  
+        }
+
+        @media screen and (max-width: $phone){
+
+            font-size: 5.5vw;  
+        }
+    }
+}
+
+.feature_container:hover{
+
+    transform: scale(1.1);
+}

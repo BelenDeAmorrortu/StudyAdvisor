@@ -1,0 +1,133 @@
+@import '../../scss/variables';
+
+.card{
+
+    width: 25vw;
+    color: black;
+    height: max-content;
+    min-height: 30vh;
+    margin: 2vw;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.3);
+    transform: rotateY(var(--rotate-y, 0));
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in;
+    cursor: pointer;
+
+    &.dark{  
+        background-color: $light-glass;
+
+        .placeholder{
+            color: #f5f5f55a;
+        }
+    }
+    &.light{  
+        background-color: $dark-glass;
+
+        .placeholder{
+            color: $dark-background;
+        }
+    }
+
+    @media screen and (max-width: $phone) {
+            
+        width: 70vw;
+        min-height: 25vh;
+    }
+
+    h4{
+        font-size: 1.6vw;
+        font-weight: 600;
+        background-clip: text;
+        color: transparent;
+        margin-top: 30px;
+        background-image: linear-gradient(35deg, $purple, $pink);
+
+        @media screen and (max-width: $phone) {
+            
+            font-size: 5vw;
+        }
+    }
+
+    .placeholder{
+        position: absolute;
+        top: -15px;
+        left: -20px;
+        opacity: 0.5;
+        font-weight: 400;
+    }
+
+    button{
+
+        display: flex;
+        align-self: flex-start;
+        justify-self: right;
+        position: relative;
+        top: -10px;
+        left: 24vw;
+        border: none;
+        background-color: $orange;
+        color: #fff;
+        border-radius: 10px;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: 0.2s linear;
+
+        &:hover{
+            background-color: $orange-hover-dark;
+            transform: scale(1.05);
+        }
+    }
+
+    div{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 22vw;
+        min-height: 30vh;
+        backface-visibility: hidden;
+        padding-right: 20px;
+    }
+
+    .front{
+        flex-direction: column;
+        ul{
+            width: 90%;
+            text-transform: capitalize;
+            list-style-type: circle;
+            padding: 0 25px;
+            margin-top: -10px;
+
+            &.dark{
+                color: #f5f5f585;
+            }
+            &.light{
+                color: $dark-background;
+            }
+        }
+    }
+
+    .back{
+        transform: rotateY(180deg);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        .placeholder{
+            left: 0;
+        }
+    }
+}
+
+.flip{
+    --rotate-y: 180deg;
+}

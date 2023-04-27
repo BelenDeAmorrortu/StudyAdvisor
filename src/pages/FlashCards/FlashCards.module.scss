@@ -1,0 +1,66 @@
+@import '../../scss/variables';
+
+.container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0;
+
+    .buttons{
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .button{
+
+            width: 63%;
+            height: 6vh;
+            font-size: 1.3vw;
+            // box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.184);
+            border: none;
+            border-radius: 0 0 $border-radius $border-radius;
+            color: $purple;
+
+            &.dark{
+                background-color: $dark-glass;
+            }
+
+            &.light{
+                background-color: $light-glass;
+            }
+
+            &:hover{
+                transform: none;
+            }
+        }
+    }
+
+    h2{
+        padding-top: 5vh;
+        font-size: 2.5vw;
+
+        @media screen and (max-width: $phone) {
+            
+            font-size: 8vw;
+        }
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 4vh 6vw;
+    }
+
+    .message{
+        font-size: 1.5vw;
+        opacity: 0.8;
+        margin: 2vw;
+    }
+}

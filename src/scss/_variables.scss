@@ -1,0 +1,60 @@
+
+// Colors -----------------------------------------
+
+// $light-blue: #42a2eb;
+// $purple:  #6e44ff;
+// $pink: #b33c86;
+// $orange: #DC7F30;
+// // $cream: #e3dae0;
+// $cream: #f5f2f3;
+
+$light-blue: #85C7DE;
+$purple:  #9A2CA0;
+$pink: #B91372;
+$orange: #B91372;
+$cream: #F1E4E8;
+
+$light-blue-hover: #85C7DE9d;
+$purple-hover:  #9A2CA09d;
+$pink-hover: #B913729d;
+$orange-hover: #B913729d;
+$orange-hover-dark: #a11163;
+$cream-hover-light: #F1E4E875;
+$cream-hover-dark: #e4d8dc;
+
+// Themes ------------------------------------------
+
+$dark-background: #212738;
+$dark-glass: #f5f5f51d;
+$dark-gradient: linear-gradient(35deg, $light-blue,  $pink);
+
+$light-background: #fff;
+$light-glass: #343e5c1c;
+$light-gradient: linear-gradient(35deg, $purple,  $pink);
+
+
+// Media Queries ----------------------------------
+
+$phone: 450px;
+$mid-screen: 800px;
+
+// Fonts ------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Raleway:wght@300;400;600;700&display=swap');
+
+$heading-font:  'Raleway', sans-serif;
+$heading-weight: 600;
+
+// $subheading-font: 'Libre Baskerville', serif;
+$subheading-font: 'Raleway', sans-serif;
+$subheading-weight: 700;
+
+$text-font: 'Raleway', sans-serif;
+$text-weight: 400;
+
+// -------------------------------------------------
+
+$border-radius: 5px
+
+
+
