@@ -7,13 +7,12 @@ export function validate(input){
     let errors = {}
 
     if(input.email.trim() === '') errors.email = 'To sign up you must enter an email'
-    else if(!emailRegex.test(input.email)) errors.email = 'Invalid email address';
-
+    else if(!input.email.match(emailRegex)) errors.email = 'Invalid email address';
 
     if(input.username.trim() === '') errors.username = 'To sign up you must enter a username'
 
     if(input.password.trim() === '') errors.password = 'To sign up you must enter a password'
-    else if(!passwordRegex.test(input.password)) errors.password = 'Your password must have at least 8 characters, 1 uppercase, 1 lowercase and a number';
+    else if(!input.password.match(passwordRegex)) errors.password = 'Your password must have at least 8 characters, 1 uppercase, 1 lowercase and a number';
 
     if(input.password !== input.confirmPassword) errors.confirmPassword = 'Passwords do not match'
     
