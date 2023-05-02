@@ -9,6 +9,7 @@ import SummaryForm from './Forms/Summary/Form'
 import FlashCard from './FlashCard/FlashCard'
 import FlashCardForm from './Forms/FlashCard/Form'
 import BackToTop from './BackToTop/BackToTop'
+import GoBackButton from './GoBackButton/GoBackButton'
 
 export {
 
@@ -22,5 +23,6 @@ export {
     SummaryForm,
     FlashCard,
     FlashCardForm,
-    BackToTop
+    BackToTop,
+    GoBackButton
 }
