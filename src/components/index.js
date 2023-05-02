@@ -8,6 +8,7 @@ import Item from './Item/Item'
 import SummaryForm from './Forms/Summary/Form'
 import FlashCard from './FlashCard/FlashCard'
 import FlashCardForm from './Forms/FlashCard/Form'
+import BackToTop from './BackToTop/BackToTop'
 
 export {
 
@@ -20,5 +21,6 @@ export {
     Item,
     SummaryForm,
     FlashCard,
-    FlashCardForm
+    FlashCardForm,
+    BackToTop
 }

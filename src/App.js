@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Route, Routes } from 'react-router-dom';
-import { Nav } from './components/index';
+import { BackToTop, Nav } from './components/index';
 import { Landingpage, LogIn, SignUp, Summary, SummaryEditor, CardSet, FlashCards } from './pages/index'
 import { useTheme } from './contexts/ThemeContext';
 
@@ -25,6 +25,8 @@ function App() {
 
 
             </Routes>
+            <BackToTop />
+
 
         </div>
     );

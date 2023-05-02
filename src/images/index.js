@@ -13,6 +13,7 @@ import google_icon from './google.svg'
 import card_set_form from './undraw_my_files_swob.svg'
 import flash_card_form from './undraw_notes_re_pxhw.svg'
 import summary_form from './undraw_process_re_gws7.svg'
+import chevron from './chevron.svg'
 
 export {
     logo,
@@ -29,5 +30,6 @@ export {
     google_icon,
     card_set_form,
     flash_card_form,
-    summary_form
+    summary_form,
+    chevron
 }
