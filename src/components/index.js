@@ -10,6 +10,7 @@ import FlashCard from './FlashCard/FlashCard'
 import FlashCardForm from './Forms/FlashCard/Form'
 import BackToTop from './BackToTop/BackToTop'
 import GoBackButton from './GoBackButton/GoBackButton'
+import CardSetForm from './Forms/CardSet/Form'
 
 export {
 
@@ -24,5 +25,6 @@ export {
     FlashCard,
     FlashCardForm,
     BackToTop,
-    GoBackButton
+    GoBackButton,
+    CardSetForm
 }

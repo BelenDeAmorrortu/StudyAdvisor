@@ -32,14 +32,8 @@ export default function FlashCards(){
         dispatch(getFlashCards(cardSetId))
     }, [cardSetId])
 
-    const [display, setDisplay] = useState('none')
+    const [display, setDisplay] = useState(false)
     const [edit, setEdit] = useState('hidden')
-    const [input, setInput] = useState({
-
-        question: '',
-        options: [ '', '', '', ''],
-        answer: ''
-    })
 
     function handleEditCards(){
 
@@ -55,7 +49,7 @@ export default function FlashCards(){
             
             <div className={style.buttons}>
 
-                <NewItemModal itemName='flash card' formImg={flash_card_form} addForm={<FlashCardForm setInput={setInput} input={input} cardSetId={cardSet._id} setDisplay={setDisplay} />} resetFormState={setInput} initialFormState={{question: '', options: ['', '', '', ''], answer: ''}} setDisplay={setDisplay} display={display} size='half'/>
+                <NewItemModal itemName='flash card' formImg={flash_card_form} addForm={<FlashCardForm cardSetId={cardSet._id} setDisplay={setDisplay} />} setDisplay={setDisplay} display={display} size='half'/>
                 
                 <button className={`${style.button} ${style[currentTheme]}`} disabled={flashCards && flashCards.length > 0 ? false : true} onClick={handleEditCards}>{ edit === 'hidden' ? 'Edit Flash Cards' : 'Done'}</button>
 

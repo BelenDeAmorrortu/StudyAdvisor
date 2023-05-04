@@ -3,7 +3,7 @@ import style from './Summary.module.scss'
 import { document, summary_form } from '../../images/index'
 import { NewItemModal, Item, SummaryForm } from "../../components/index";
 import { useDispatch, useSelector } from "react-redux";
-import { createSummary, getSummaries, deleteSummary} from "../../redux/actions/summary";
+import { getSummaries, deleteSummary} from "../../redux/actions/summary";
 import { useAuth } from "../../contexts/AuthContext";
 import Alert from '../../utils/Alert'
 import { useTheme } from "../../contexts/ThemeContext";
@@ -19,9 +19,6 @@ export default function Summaries() {
     const navigate = useNavigate()
     const summaries = useSelector(state => state.summary.summaries)
 
-    const [name, setName] = useState('')
-    const [display, setDisplay] = useState('none')
-
     useEffect(()=>{
 
         window.scrollTo(0,0)
@@ -30,15 +27,7 @@ export default function Summaries() {
 
     }, [])
 
-    function handleOnClick(name){
-
-        if(currentUser){
-
-            dispatch(createSummary({name, userId: currentUser.uid}))
-            setDisplay('none')
-            setName('')
-        }
-    }
+    const [display, setDisplay] = useState(false)
 
     function handleDelete(id, name){
 
@@ -49,7 +38,7 @@ export default function Summaries() {
 
         <div className={style.summaries_container}>
 
-            <NewItemModal itemName='Summary' formImg={summary_form} addForm={<SummaryForm handleOnClick={handleOnClick} setName={setName} name={name} />} resetFormState={setName} initialFormState='' setDisplay={setDisplay} display={display} size='full'/>
+            <NewItemModal itemName='Summary' formImg={summary_form} addForm={<SummaryForm setDisplay={setDisplay} />} setDisplay={setDisplay} display={display} size='full'/>
 
             <div className={style.summaries_display}>
 

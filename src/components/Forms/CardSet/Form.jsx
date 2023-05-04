@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useAuth } from '../../../contexts/AuthContext'
 import { useTheme } from '../../../contexts/ThemeContext'
-import { createSummary } from "../../../redux/actions/summary";
+import { createNewCardSet } from '../../../redux/actions/cardSet'
 import style from './Form.module.scss'
 
 export default function Form(setDisplay) {
@@ -17,14 +17,14 @@ export default function Form(setDisplay) {
     useEffect(()=>{
         return ()=> setName('')
     },[])
-
+    
+    
     function handleSubmit(){
 
-        // e.preventDefault()
-        dispatch(createSummary({name, userId: currentUser.uid}))
+        if(name !== '') dispatch(createNewCardSet({name, userId: currentUser.uid}))
         setDisplay(false)
     }
-    
+
     return (
 
         <form className={style.form}>

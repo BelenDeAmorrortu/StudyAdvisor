@@ -2,20 +2,18 @@ import React from 'react'
 import { useTheme } from '../../contexts/ThemeContext'
 import style from './NewItemModal.module.scss'
 
-export default function NewItemModal({ itemName, formImg, addForm, resetFormState, initialFormState, display, setDisplay, size}) {
+export default function NewItemModal({ itemName, formImg, addForm, display, setDisplay, size}) {
     
     const {currentTheme} = useTheme()
 
     function showForm(){
 
-        setDisplay('flex')
+        setDisplay(true)
     }
 
     function handleOnClose(){
 
-        resetFormState(initialFormState)
-        setDisplay('none')
-
+        setDisplay(false)
     }
 
     return (
@@ -29,7 +27,9 @@ export default function NewItemModal({ itemName, formImg, addForm, resetFormStat
 
             </div>
             
-            <div className={style.content} style={{display: display}} >
+            {display ?
+
+            <div className={style.content} >
 
                 <div className={`${style.new_item_form} ${style[currentTheme]}`}>
 
@@ -46,6 +46,8 @@ export default function NewItemModal({ itemName, formImg, addForm, resetFormStat
 
                 </div>
             </div>
+            
+            : null}
         
         </div>
     )

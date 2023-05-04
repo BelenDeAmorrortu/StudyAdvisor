@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { SummaryForm, NewItemModal, Item} from '../../components/index'
+import { CardSetForm, NewItemModal, Item} from '../../components/index'
 import style from './CardSet.module.scss'
 import { folder, card_set_form } from '../../images/index'
 import { useEffect } from 'react'
-import { getCardSets, deleteCardSet, createNewCardSet } from '../../redux/actions/cardSet'
+import { getCardSets, deleteCardSet } from '../../redux/actions/cardSet'
 import { useAuth } from '../../contexts/AuthContext'
 import { useTheme } from '../../contexts/ThemeContext'
 import { useNavigate } from 'react-router-dom'
@@ -30,8 +30,7 @@ export default function CardSet() {
     }, [currentTheme, currentUser])
 
 
-    const [display, setDisplay] = useState('none')
-    const [name, setName] = useState('')
+    const [display, setDisplay] = useState(false)
 
     function handleDelete(id, name){
 
@@ -40,20 +39,11 @@ export default function CardSet() {
         )
     }
 
-    function handleOnClick(name){
-        
-        if(name === '') return
-        dispatch(createNewCardSet({name, userId: currentUser.uid}))
-        setName('')
-        setDisplay('none')
-
-    }
-
     return (
 
         <div className={style.cardFolders_container}>
 
-            <NewItemModal itemName={'card set'} formImg={card_set_form} addForm={<SummaryForm name={name} setName={setName} setDisplay={setDisplay} handleOnClick={handleOnClick} />} resetFormState={setName} initialFormState={name} setDisplay={setDisplay} display={display} size='full'/>
+            <NewItemModal itemName={'card set'} formImg={card_set_form} addForm={<CardSetForm setDisplay={setDisplay} />} setDisplay={setDisplay} display={display} size='full'/>
 
             <div className={style.cardGroups_display}>
 
